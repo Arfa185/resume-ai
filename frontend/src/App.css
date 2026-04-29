@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f2ef;
+}
+
+/* Navbar */
+.navbar {
+  background: #0073b1;
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+}
+
+/* Layout */
+.main {
+  display: flex;
+  padding: 20px;
+}
+
+/* Left panel */
+.left {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Right panel */
+.right {
+  width: 70%;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* Inputs */
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #0073b1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e6f0f8;
+  color: #0073b1;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 20px;
+}
+
+/* Score */
+.score {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dropzone {
+  border: 2px dashed #0073b1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  background: #f8fbff;
+}
+
+.dropzone:hover {
+  background: #eef6ff;
+}
