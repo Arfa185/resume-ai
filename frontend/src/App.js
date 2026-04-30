@@ -12,7 +12,7 @@ function App() {
   const [suggestion, setSuggestion] = useState("");
   const [match, setMatch] = useState(0);
   const [missingSkills, setMissingSkills] = useState([]);
-
+  const BASE_URL = "https://resume-ai-2-64ih.onrender.com/api";
    const [file, setFile] = useState(null);
 
     // Drag & Drop
@@ -33,7 +33,7 @@ function App() {
       const formData = new FormData();
       formData.append("file", file);
 
-      await fetch("http://localhost:8080/api/upload", {
+      await fetch(${BASE_URL}/upload, {
         method: "POST",
         body: formData,
       });
@@ -41,7 +41,7 @@ function App() {
       alert("Resume uploaded!");
     };
   const getSuggestion = async () => {
-    const res = await fetch("http://localhost:8080/api/suggest", {
+    const res = await fetch(${BASE_URL}/suggest, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,13 +60,14 @@ function App() {
   };
 
   const getMatch = async () => {
-    const res = await fetch(
-      `http://localhost:8080/api/match?resumeSkills=${skills}&jobSkills=${jobSkills}`,
-      { method: "POST" }
-    );
+  const res = await fetch(
+    `${BASE_URL}/match?resumeSkills=${skills}&jobSkills=${jobSkills}`,
+    { method: "POST" }
+  );
 
-    setMatch(parseInt(await res.text()));
-  };
+  const data = await res.text();
+  setMatch(parseInt(data));
+};
 
   const chartData = [
     { name: "Match", value: match },
