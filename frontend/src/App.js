@@ -33,7 +33,7 @@ function App() {
       const formData = new FormData();
       formData.append("file", file);
 
-      await fetch(${BASE_URL}/upload, {
+      await fetch(`${BASE_URL}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -41,7 +41,7 @@ function App() {
       alert("Resume uploaded!");
     };
   const getSuggestion = async () => {
-    const res = await fetch(${BASE_URL}/suggest, {
+    const res = await fetch(`${BASE_URL}/suggest`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
